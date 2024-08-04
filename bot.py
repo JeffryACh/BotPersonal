@@ -15,7 +15,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-TOKEN = os.getenv('DISCORD_TOKEN')
+
+DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
 intents = discord.Intents.default()
@@ -71,4 +72,4 @@ async def jarvis(ctx, *, question: str = None):
     except Exception as e:
         await ctx.send(f'Ocurrió un error al interactuar con OpenAI: {str(e)}')
 
-bot.run(TOKEN)
+bot.run(DISCORD_TOKEN)
